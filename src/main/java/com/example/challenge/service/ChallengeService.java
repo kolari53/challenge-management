@@ -45,7 +45,7 @@ public class ChallengeService {
         c.setAccount(account);
         c.setLanguage(lang);
         c.setStatus(ChallengeStatus.PENDING);
-        c.setExpiresAt(LocalDateTime.now().plusMinutes(1));
+        c.setExpiresAt(LocalDateTime.now().plusMinutes(5));
         repo.save(c);
 
         audit.record(c, ChallengeStatus.CREATED, "PORTABILITY", "Challenge created and waiting for reply");
