@@ -51,7 +51,7 @@ class ChallengeServiceTest {
     }
 
     @Test
-    void shouldCreateChallengeSuccessfully() {
+    void shouldCreateChallengeSuccessfully() throws InterruptedException {
         when(bssService.isRegistered(anyString())).thenReturn(true);
         when(bssService.isActive(anyString())).thenReturn(true);
         when(repo.existsByMsisdnAndStatusIn(anyString(), anyList())).thenReturn(false);

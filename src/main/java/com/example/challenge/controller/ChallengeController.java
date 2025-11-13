@@ -27,7 +27,7 @@ public class ChallengeController {
     public ResponseEntity<Challenge> create(
         @RequestParam String msisdn,
         @RequestParam String account,
-        @RequestParam(defaultValue = "tr") String lang) {
+        @RequestParam(defaultValue = "tr") String lang) throws InterruptedException {
         return ResponseEntity.ok(service.createChallenge(msisdn, account, lang));
     }
 
